@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+   <configuration default="false" name="AppKt" type="JetRunConfigurationType" nameIsGenerated="true">
+      <module name="project_dictionary_javalin.main"/>
+      <option name="VM_PARAMETERS" value=""/>
+      <option name="PROGRAM_PARAMETERS" value=""/>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false"/>
+      <option name="ALTERNATIVE_JRE_PATH"/>
+      <option name="PASS_PARENT_ENVS" value="true"/>
+      <option name="MAIN_CLASS_NAME" value="AppKt"/>
+      <option name="WORKING_DIRECTORY" value=""/>
+      <envs>
+         <env name="POSTGRES_HOST" value="localhost"/>
+         <env name="POSTGRES_USER" value="postgres"/>
+         <env name="POSTGRES_PASSWORD" value="postgres"/>
+         <env name="POSTGRES_DB" value="project_dictionary"/>
+         <env name="POSTGRES_PORT" value="7055"/>
+         <env name="JAVALIN_PORT" value="7000"/>
+      </envs>
+      <method v="2">
+         <option name="Make" enabled="true"/>
+      </method>
+   </configuration>
+</component>

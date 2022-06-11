@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+   # Diese Datei ist für die Entwicklung der API gedacht.
+   dev_datenbank_service:
+      # Alpine Linux is much smaller than most distribution base images (~5MB),
+      # and thus leads to much slimmer images in general.
+      # Die Semantik der nachfolgenden Zeilen
+      # IMAGE:TAG
+      image: postgres:12.2-alpine
+      # Pinning-by-digest is best practice because
+      #
+      #    Tags are mutable, so there is no guarantee a tag will never change.
+      #    It guarantees that every instance of the service is running exactly the same code.
+      #    It allows you to put an image through QA/testing and verify that that version of the image is approved to go into production.
+      #    You can use Docker Content Trust and sign specific versions of the image.
+      #    You can roll back to an earlier version of the image, even if that version was not tagged (or "no longer tagged").
+      #    Digests also prevent race-conditions; if a new image is pushed while a deploy is in progress,
+      #    different nodes may be pulling the images at different times, so some nodes have the new image, some have the old one.
+      volumes:
+         # Semantik der nachfolgenden Zeilen
+         # HOSTVERZEICHNIS:KONTAINERVERZEICHNIS
+         - ./db-data:/var/lib/postgresql/data
+
+      environment:
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=postgres
+         - POSTGRES_DB=project_dictionary
+
+      ports:
+         - 7055:5432

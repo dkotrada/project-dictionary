@@ -1,0 +1,12 @@
+root = true
+
+[*]
+end_of_line = lf
+indent_size = 3
+insert_final_newline = true
+
+[*.kt]
+indent_style = tab
+
+[*.kts]
+indent_style = space
